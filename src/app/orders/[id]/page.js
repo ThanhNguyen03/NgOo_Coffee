@@ -7,7 +7,7 @@ import TotalCartPrice from "@/components/layout/TotalCartPrice";
 import InfoForm from "@/components/layout/InforForm";
 import LeftArrow from "@/components/icons/LeftArrow";
 import Link from "next/link";
-import { useProfile } from "@/components/UseProfile";
+import { useProfile } from "@/components/useProfile";
 import { useParams } from "next/navigation";
 import { useEffect, useState, useContext } from "react";
 import { CartContext } from "@/components/AppContext";

@@ -3,7 +3,7 @@ import SectionHeaders from "@/components/layout/SectionHeader";
 import UserTabs from "@/components/layout/UserTabs";
 import LoadingPage from "@/components/layout/LoadingPage";
 import RightArrow from "@/components/icons/RightArrow";
-import { useProfile } from "@/components/UseProfile";
+import { useProfile } from "@/components/useProfile";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";

@@ -7,7 +7,7 @@ import InfoBox from "@/components/layout/InfoBox";
 import LeftArrow from "@/components/icons/LeftArrow";
 import DeleteButton from "@/components/layout/DeleteButton";
 import { useEffect, useState } from "react";
-import { useProfile } from "@/components/UseProfile";
+import { useProfile } from "@/components/useProfile";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import toast from 'react-hot-toast';

@@ -1,5 +1,5 @@
 "use client"
-import { useProfile } from "@/components/UseProfile";
+import { useProfile } from "@/components/useProfile";
 import RightArrow from "@/components/icons/RightArrow";
 import ErrorBox from "@/components/layout/ErrorBox";
 import LoadingPage from "@/components/layout/LoadingPage";

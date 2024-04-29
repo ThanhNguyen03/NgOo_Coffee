@@ -1,7 +1,7 @@
 "use client"
 import UserTabs from "@/components/layout/UserTabs";
 import ErrorBox from "@/components/layout/ErrorBox";
-import { useProfile } from "@/components/UseProfile";
+import { useProfile } from "@/components/useProfile";
 import InfoBox from "@/components/layout/InfoBox";
 import TrashIcon from "@/components/icons/Trash";
 import DeleteButton from "@/components/layout/DeleteButton";

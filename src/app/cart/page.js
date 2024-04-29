@@ -6,7 +6,7 @@ import TotalCartPrice from "@/components/layout/TotalCartPrice";
 import InfoBox from "@/components/layout/InfoBox";
 import { useContext, useEffect, useState } from "react";
 import InfoForm from "@/components/layout/InforForm";
-import { useProfile } from "@/components/UseProfile";
+import { useProfile } from "@/components/useProfile";
 import PlusIcon from "@/components/icons/Plus";
 import MinusIcon from "@/components/icons/Minus";
 import ShoppingCart from "@/components/icons/ShoppingCart";

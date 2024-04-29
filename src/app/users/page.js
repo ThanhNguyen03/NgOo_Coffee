@@ -6,7 +6,7 @@ import InfoBox from "@/components/layout/InfoBox";
 import DeleteButton from "@/components/layout/DeleteButton";
 import TrashIcon from "@/components/icons/Trash";
 import { useEffect, useState } from "react";
-import { useProfile } from "@/components/UseProfile";
+import { useProfile } from "@/components/useProfile";
 import Link from "next/link";
 import toast from 'react-hot-toast';
 import { redirect } from "next/navigation";

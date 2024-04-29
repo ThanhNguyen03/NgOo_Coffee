@@ -2,7 +2,7 @@
 import EditableImage from "@/components/layout/EditableImage";
 import DeleteButton from "@/components/layout/DeleteButton";
 import { useState } from "react";
-import { useProfile } from "../UseProfile";
+import { useProfile } from "../useProfile";
 import InfoForm from "./InforForm";
 
 export default function UserForm({user, onSave, onDelete}) {

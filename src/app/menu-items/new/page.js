@@ -1,6 +1,6 @@
 "use client"
 import UserTabs from "@/components/layout/UserTabs";
-import { useProfile } from "@/components/UseProfile";
+import { useProfile } from "@/components/useProfile";
 import ErrorBox from "@/components/layout/ErrorBox";
 import LoadingPage from "@/components/layout/LoadingPage";
 import { useState } from "react";
