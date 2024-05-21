@@ -28,7 +28,7 @@ export function AppProvider({children}) {
         }
     }, [localStorage]);
 
-    function saveCartProductsToLocalStogare(cartProducts) {
+    function saveCartProductsToLocalStorage(cartProducts) {
         if(localStorage) {
             localStorage.setItem('cart', JSON.stringify(cartProducts));
         }
@@ -36,13 +36,13 @@ export function AppProvider({children}) {
 
     function clearCart() {
         setCartProducts([]);
-        saveCartProductsToLocalStogare([]);
+        saveCartProductsToLocalStorage([]);
     }
 
     function removeCartProduct(indexToRemove) {
         setCartProducts(prevCartProducts => {
             const newCartProducts = prevCartProducts.filter((item, index) => index !== indexToRemove);
-            saveCartProductsToLocalStogare(newCartProducts);
+            saveCartProductsToLocalStorage(newCartProducts);
 
             return newCartProducts;
         });
@@ -53,11 +53,11 @@ export function AppProvider({children}) {
         setCartProducts(prevCartProducts => {
             const newCartProducts = prevCartProducts.map((item, index) => {
                 if (index === indexToUpdate) {
-                    item.quantity === value.quantity;
+                    item.quantity = value.quantity;
                 }
                 return item;
             });
-            saveCartProductsToLocalStogare(newCartProducts);
+            saveCartProductsToLocalStorage(newCartProducts);
 
             return newCartProducts;
         });
@@ -67,7 +67,7 @@ export function AppProvider({children}) {
         setCartProducts(prevProducts => {
             const cartProduct = {...product, size, extras, quantity};
             const newProducts = [...prevProducts, cartProduct];
-            saveCartProductsToLocalStogare(newProducts);
+            saveCartProductsToLocalStorage(newProducts);
 
             return newProducts;
         });

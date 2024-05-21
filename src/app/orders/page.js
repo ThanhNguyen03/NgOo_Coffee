@@ -12,7 +12,7 @@ import ErrorBox from "@/components/layout/ErrorBox";
 export default function OrderPage() {
     const session = useSession();
     const {status} = session;
-    const {loading, data:profileData} = useProfile();
+    const {data:profileData} = useProfile();
     const [loadingOrders, setLoadingOrders] = useState(true);
     const [orders, setOrders] = useState([]);
 
