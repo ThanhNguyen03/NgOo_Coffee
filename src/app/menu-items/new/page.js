@@ -16,11 +16,11 @@ export default function NewMenuItemPage() {
     const [redirectToItems, setRedirectToItems] = useState(false);
 
     if (loading) {
-        return <LoadingPage title={'Loading info...'}>w-40 pt-[80px] h-[60vh]</LoadingPage>
+        return <LoadingPage title={'Loading info...'}>w-40 pt-[80px] h-[73vh]</LoadingPage>
     }
 
     if (!data.admin) {
-        return <ErrorBox title={'You not an Admin'}>w-40 pt-[80px] h-[60vh]</ErrorBox>
+        return <ErrorBox title={'You not an Admin'}>w-40 pt-[80px] h-[73vh]</ErrorBox>
     }
 
     async function handleFormSubmit(e, data) {

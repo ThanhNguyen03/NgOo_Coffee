@@ -7,7 +7,7 @@ import { useProfile } from "@/components/useProfile";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
-import { redirect } from "next/navigation";
+import ErrorBox from "@/components/layout/ErrorBox";
 
 export default function OrderPage() {
     const session = useSession();
@@ -29,13 +29,13 @@ export default function OrderPage() {
         })
     }
 
-    if (loadingOrders) {
-        return <LoadingPage title={'Loading...'}>w-40 pt-[80px] h-[60vh]</LoadingPage>;
-    } 
-
     if (status === 'unauthenticated') {
-        return redirect('/login?login=true');
+        return <ErrorBox title={'You need to Login!'}>w-40 pt-[80px] h-[73vh]</ErrorBox>
     }
+
+    if (loadingOrders) {
+        return <LoadingPage title={'Loading...'}>w-40 pt-[80px] h-[73vh]</LoadingPage>;
+    } 
 
     return (
         <section className={`mt-8 max-w-6xl mx-auto pt-[80px] ${orders?.length <= 2 ? 'h-[70vh]' : ''}`}>

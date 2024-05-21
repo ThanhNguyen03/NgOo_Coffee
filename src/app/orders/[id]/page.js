@@ -46,7 +46,7 @@ export default function OrderViewPage() {
     }
 
     if (loadingOrder) {
-        return <LoadingPage title={'Loading...'}>w-40 pt-[80px] h-[60vh]</LoadingPage>;
+        return <LoadingPage title={'Loading...'}>w-40 pt-[80px] h-[73vh]</LoadingPage>;
     } 
 
     if (redirectToItems) {

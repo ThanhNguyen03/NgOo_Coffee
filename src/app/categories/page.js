@@ -30,11 +30,11 @@ export default function CategoriesPage() {
     }
 
     if (profileLoading) {
-        return <LoadingPage title={'Loading info...'}>w-40 pt-[80px] h-[60vh]</LoadingPage>
+        return <LoadingPage title={'Loading info...'}>w-40 pt-[80px] h-[73vh]</LoadingPage>
     }
 
     if (!profileData.admin) {
-        return <ErrorBox title={'You not an Admin'}>w-40 pt-[80px] h-[60vh]</ErrorBox>
+        return <ErrorBox title={'You not an Admin'}>w-40 pt-[80px] h-[73vh]</ErrorBox>
     }
 
     async function handleCategorySubmit(e) {

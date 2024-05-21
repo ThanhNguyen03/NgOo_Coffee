@@ -9,13 +9,19 @@ import MenuIcon from "@/components/icons/MenuIcon";
 import GlobalIcon from "@/components/icons/Global";
 
 function AuthLinks({status, userName}) {
+    const { clearCart } = useContext(CartContext);
     if (status === 'authenticated') {
         return (
             <>
                 <Link href={'/profile'} className="login-link whitespace-nowrap py-2 custom-max:hover:text-white">
                     Hello, <span className="font-semibold">{userName}</span>!
                 </Link>
-                <button onClick={()=>signOut()} className="bg-orange-600 text-white hover:bg-primary hover:text-white rounded-full px-8 py-2 login-link font-semibold except-button duration-1000 relative button-hover custom-max:w-fit custom-max:mx-auto custom-max:px-20">
+                <button onClick={(e) =>{
+                    e.preventDefault();
+                    clearCart();
+                    signOut();
+                }} 
+                    className="bg-orange-600 text-white hover:bg-primary hover:text-white rounded-full px-8 py-2 login-link font-semibold except-button duration-1000 relative button-hover custom-max:w-fit custom-max:mx-auto custom-max:px-20">
                     LogOut
                 </button>
             </>
@@ -39,13 +45,11 @@ export default function Header() {
     const userDataUpdated = session.data;
     const {cartProducts} = useContext(CartContext);
     const [mobileNavOpen, setMobileNavOpen] = useState(false);
-    console.log(session)
 
     let userName = userDataUpdated?.user?.name  || userDataUpdated?.user?.email;
     if (userName && userName.includes(' ')) {
         userName = userName.split(' ')[0];
     }
-    console.log('name: ',userName)
 
     return (
         <header className="">

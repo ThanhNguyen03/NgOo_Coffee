@@ -15,9 +15,12 @@ import Link from "next/link";
 import RightArrow from "@/components/icons/RightArrow";
 import toast from 'react-hot-toast';
 import { redirect } from "next/navigation";
+import { useSession } from "next-auth/react";
+import ErrorBox from "@/components/layout/ErrorBox";
 const crypto = require('crypto');
 
 export default function CartPage() {
+    const session = useSession();
     const { cartProducts, removeCartProduct, clearCart, updateCartProduct } = useContext(CartContext);
     const [infoError, setInfoError] = useState('');
     const [info, setInfo] = useState({});
@@ -42,6 +45,10 @@ export default function CartPage() {
         const infoFromProfile = {phone, streetAddress, city, postalCode};
         setInfo(infoFromProfile);
     },[profileData]);
+
+    if (session.status === 'unauthenticated') {
+        return <ErrorBox title={'Need Login to Buy Item'}>w-40 pt-[80px] h-[73vh]</ErrorBox>
+    }
 
     let totalPrice = 0;
     let deliveryPrice = 0;

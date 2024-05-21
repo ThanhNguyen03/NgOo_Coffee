@@ -28,7 +28,7 @@ export default function ProfilePage() {
     },[session, status]);
 
     if (status === 'loading') {
-        return <LoadingPage title={'Loading...'}>w-40 pt-[80px] h-[60vh]</LoadingPage>;
+        return <LoadingPage title={'Loading...'}>w-40 pt-[80px] h-[73vh]</LoadingPage>;
     } 
 
     if (status === 'unauthenticated') {
@@ -37,7 +37,7 @@ export default function ProfilePage() {
     }
 
     if (!isProfileFetch) {
-        return <LoadingPage title={'Loading...'}>w-40 pt-[80px] h-[60vh]</LoadingPage>;
+        return <LoadingPage title={'Loading...'}>w-40 pt-[80px] h-[73vh]</LoadingPage>;
     }
 
     async function handleInfoProfileUpdate(e, data) {
