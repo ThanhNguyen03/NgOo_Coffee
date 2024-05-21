@@ -35,6 +35,11 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
+## Test Admin
+email: adminNgOo@gmail.com
+password: HelloNgOoCoffee!
+
+## Test Payment
 test momo:
 NGUYEN VAN A
 9704 0000 0000 0018
