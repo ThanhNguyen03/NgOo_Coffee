@@ -42,30 +42,25 @@ export const authOptions = {
       }),
     ],
     callbacks: {
-      async jwt({ token, user }) {
-        if (user) {
-          // Return a new token with the latest user information
-          return { ...token };
+      async jwt({ token }) {
+  
+        if (token && token.email) {
+          // Retrieve the latest user information from the database
+          mongoose.connect(process.env.MONGO_URL);
+          const user = await User.findOne({ email: token.email });
+  
+          if (user) {
+            // Return a new token with the latest user information
+            token.name = user.name;
+            token.email = user.email;
+          }
+          return token;
         }
         return token;
       },
-      async session({ session, token, req }) {
-        // Get the user information from the token
-        const { email } = token;
-  
-        if (email) {
-          // Retrieve the latest user information from the database
-          mongoose.connect(process.env.MONGO_URL);
-          const user = await User.findOne({ email });
-  
-          if (user) {
-            const {name, email} = user;
-            // Update the session with the latest user information
-            return { ...session, name, email };
-          }
-        }
-        
-        return session;
+      async session({ session, token }) {
+        session.user = token;
+        return { ...session};
       }
     },
 };

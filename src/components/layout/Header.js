@@ -39,11 +39,13 @@ export default function Header() {
     const userDataUpdated = session.data;
     const {cartProducts} = useContext(CartContext);
     const [mobileNavOpen, setMobileNavOpen] = useState(false);
+    console.log(session)
 
-    let userName = userDataUpdated?.name  || userDataUpdated?.email;
+    let userName = userDataUpdated?.user?.name  || userDataUpdated?.user?.email;
     if (userName && userName.includes(' ')) {
         userName = userName.split(' ')[0];
     }
+    console.log('name: ',userName)
 
     return (
         <header className="">
